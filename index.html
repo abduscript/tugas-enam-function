@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validasi Umur</title>
+</head>
+<style>
+    button{
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+    }
+</style>
+<body>
+    
+<input type="number" placeholder="cek validasi umur berkendara" id="ageCheck">
+<button onclick="validasiUmur()"></button>
+<h1 id="information"></h1>
+
+
+<script>
+    function validasiUmur(){
+        let umur = document.getElementById('ageCheck').value;
+        if( umur === ""){
+            document.getElementById('information').innerText = "NO ENTRY"
+        }else if( umur > 0 &&  umur <= 16){
+            document.getElementById('information').innerText = "Umur Anda Belum Cukup Untuk Mengendarai kendaraan bermotor"
+        }else if( umur >= 17 &&  umur <= 80){
+            document.getElementById('information').innerText = "Umur Anda Telah Cukup Untuk Mengendarai kendaraan bermotor"
+        }else{
+            document.getElementById('information').innerText = "ANDA TIDAK BOLEH BERKENDARA"
+        }
+    }
+</script>
+</body>
+</html>
